@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 import { X } from 'lucide-react'
 
 interface Product {
@@ -267,6 +268,7 @@ export default function ProductForm({ product, onClose }: ProductFormProps) {
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Preview
               </label>
+{/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={formData.image}
                 alt="Preview"

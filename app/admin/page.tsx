@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ShoppingBag, LogOut, Plus, Edit, Trash2 } from 'lucide-react'
 import ProductForm from '@/components/ProductForm'
 
@@ -196,7 +197,7 @@ export default function AdminPage() {
             <div className="p-12 text-center">
               <ShoppingBag className="w-12 h-12 text-gray-400 mx-auto mb-4" />
               <p className="text-gray-500 text-lg">No products yet.</p>
-              <p className="text-gray-400 text-sm mt-2">Click "Add Product" to get started.</p>
+              <p className="text-gray-400 text-sm mt-2">Click &quot;Add Product&quot; to get started.</p>
             </div>
           ) : (
             <div className="overflow-x-auto">
@@ -225,9 +226,11 @@ export default function AdminPage() {
                     <tr key={product.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4 whitespace-nowrap">
                         {product.image ? (
-                          <img
+                          <Image
                             src={product.image}
                             alt={product.name}
+                            width={64}
+                            height={64}
                             className="w-16 h-16 object-cover rounded"
                           />
                         ) : (
